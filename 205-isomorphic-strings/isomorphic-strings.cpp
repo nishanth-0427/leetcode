@@ -1,14 +1,10 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        return check_isomorphic(s,t);
+        return check_isomorphic(s,t) && check_isomorphic(t,s);
     }
 
     bool check_isomorphic(string s, string t) {
-        return help(s,t) & help(t,s);
-    }
-
-    bool help(string s, string t) {
         int n = s.length();
         unordered_map<char, char> m;
         for(int i=0;i<n;i++) {
